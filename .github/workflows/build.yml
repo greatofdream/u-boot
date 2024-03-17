@@ -50,5 +50,12 @@ jobs:
       uses: actions/checkout@v2
     - name: Compile
       run: |
-        make CROSS_COMPILE=aarch64-linux-gnu- odroid-c2_defconfig -j4
-        make CROSS_COMPILE=aarch64-linux-gnu- -j4
+        make CROSS_COMPILE=aarch64-linux-gnu- KBUILD_OUTPUT=out odroid-c2_defconfig -j4
+        make CROSS_COMPILE=aarch64-linux-gnu- KBUILD_OUTPUT=-j4
+        echo "output files:" `ls out/`
+    - name: Release
+      uses: ncipollo/release-action@main
+      with:
+        artifacts: out/*
+        allowUpdates: true
+        token: ${{ secrets.GITHUB_TOKEN }}
