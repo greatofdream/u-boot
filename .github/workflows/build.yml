@@ -51,7 +51,7 @@ jobs:
     - name: Compile
       run: |
         make CROSS_COMPILE=aarch64-linux-gnu- KBUILD_OUTPUT=out odroid-c2_defconfig -j4
-        make CROSS_COMPILE=aarch64-linux-gnu- KBUILD_OUTPUT=-j4
+        make CROSS_COMPILE=aarch64-linux-gnu- KBUILD_OUTPUT=out -j4
         echo "output files:" `ls out/`
     - name: Release
       uses: ncipollo/release-action@main
