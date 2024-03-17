@@ -36,7 +36,7 @@ jobs:
     - name: Initialize the environment
       run: |
         echo "Hello ${{ inputs.set_release }}"
-        apt install gcc gcc-aarch64-linux-gnu bc bison build-essential coccinelle \
+        sudo apt install gcc gcc-aarch64-linux-gnu bc bison build-essential coccinelle \
           device-tree-compiler dfu-util efitools flex gdisk graphviz imagemagick \
           liblz4-tool libgnutls28-dev libguestfs-tools libncurses-dev \
           libpython3-dev libsdl2-dev libssl-dev lz4 lzma lzma-alone openssl \
