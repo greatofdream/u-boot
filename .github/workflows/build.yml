@@ -57,6 +57,6 @@ jobs:
       uses: ncipollo/release-action@main
       with:
         tag: v1
-        artifacts: uboot.bin
+        artifacts: out/uboot.bin
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
